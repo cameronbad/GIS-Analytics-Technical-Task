@@ -11,9 +11,15 @@
     <!-- add loader-wrapper -->
     <div class="page-wrapper">
         <div class="navbar">
-            <a href="/" class="navbar-brand">
-                <img src="assets/logo_dark 1.png" alt="ZORT" class="logo-image">
-            </a>
+            <div class="m-navbar">
+                <a href="/" class="navbar-brand">
+                    <img src="assets/logo_dark 1.png" alt="ZORT" class="logo-image">
+                </a>
+                <div class="menu-button">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
             <div class="nav-menu">
                 <div class="nav-links">
                     <a href="#features">Features</a>
@@ -29,9 +35,7 @@
                     </a>
                 </div>
             </div>
-            <div class="menu-button">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+
         </div>
         <section class="hero">
 
@@ -55,6 +59,34 @@
 
         </footer>
         <script src="https://kit.fontawesome.com/a3b46c02f6.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+            //Emergency reset for screensize changes
+            $(document).ready(function() { 
+                $(window).resize(function() { 
+                    $(".nav-menu").css('height', '0px');
+                    $(".nav-menu").css('margin-top', '');
+                    $(".menu-button").css('rotate', '');
+                }); 
+            }); 
+
+            //Navbar collapsible
+            $(document).on("click", '.menu-button', function() {
+                //Get page location
+                if ($(".nav-menu").css('height') == '0px') {
+                    $(".nav-menu").css('height', '100vh');
+                    $(".nav-menu").css('margin-top', '3rem');
+                    $(this).css('rotate', '90deg');
+                } else {
+                    $(".nav-menu").css('height', '0px');
+                    $(".nav-menu").css('margin-top', '');
+                    $(this).css('rotate', '');
+                }
+
+            });
+
+
+        </script>
     </div>
 </body>
 </html>
