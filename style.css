@@ -160,8 +160,70 @@ h1 {
 }
 
 .hero-screenshots {
-    
+    width: 600px;
+    min-width: 600px;
+    height: 5000px;
+    justify-content: center;
+    display: flex;
 }
+
+.sticky-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top:0;
+    height: calc(100vh - 80px);
+    width: 300px;
+}
+
+.screenshots {
+    position: relative;
+    height: 600px;
+    width: 300px;
+}
+
+/* animation for screenshots */
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+  }
+
+.app-screenshot {
+    height: 600px;
+    border-radius: 24px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+
+    animation: fadein 1s linear forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--midscroll) * -1s);
+}
+.app-screenshot.left {
+    rotate: -20deg;
+    position: absolute;
+    bottom: -22px;
+    left: -130px;
+    animation-delay: calc(var(--leftscroll) * -1s);
+    z-index: 1;
+}
+.app-screenshot.right {
+    rotate: 20deg;
+    position: absolute;
+    bottom: -22px;
+    right: -110px;
+    animation-delay: calc(var(--rightscroll) * -1s);
+    z-index: 3;
+}
+
 
 
 /* Screen size adjustments */

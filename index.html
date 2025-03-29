@@ -45,9 +45,14 @@
                         <a href="" class="dl-button"><i class="fa-brands fa-apple" style="margin-right: 8px;"></i> Download on App Store</a>
                     </div>
                 </div>
-                <div class="hero-screenshots">
-                    <!-- Screenshots here -->
-
+                <div id="hero-scroll" class="hero-screenshots">
+                    <div class="sticky-container">
+                        <div class="screenshots">
+                            <img src="./assets/screen1.png" alt="ZORT App Interface" class="app-screenshot left">
+                            <img src="./assets/screen2.png" alt="ZORT App Features" class="app-screenshot">
+                            <img src="./assets/screen3.png" alt="ZORT App Analytics" class="app-screenshot right">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -83,6 +88,34 @@
                     $(".menu-button").css('rotate', '');
                 }); 
             }); 
+
+            //Scroll listen
+            window.addEventListener('scroll', () => {
+                const hero = document.getElementById("hero-scroll");
+                var scroll = (window.scrollY - hero.offsetTop) / hero.scrollHeight;
+                if (scroll < 0) {
+                    scroll = 0
+                }
+
+                var leftscroll = scroll * 5;
+                if (leftscroll > 1) {
+                    leftscroll = 1;
+                }
+
+                var midscroll = (scroll - 0.25) * 5;
+                if (midscroll > 1) {
+                    midscroll = 1;
+                }
+
+                var rightscroll = (scroll - 0.5) * 5;
+                if (rightscroll > 1) {
+                    rightscroll = 1;
+                }
+
+                document.body.style.setProperty('--leftscroll', leftscroll);
+                document.body.style.setProperty('--midscroll', midscroll);
+                document.body.style.setProperty('--rightscroll', rightscroll);
+            }, false);
 
             //Navbar collapsible
             $(document).on("click", '.menu-button', function() {
