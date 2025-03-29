@@ -18,6 +18,14 @@ body {
     background: var(--dark);
 }
 
+/* headings and text */
+h1 {
+    color: white;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -46,10 +54,6 @@ body {
     align-items: center;
 }
 
-.navbar-brand {
-
-}
-
 .logo-image {
     height: 32px;
     width: auto;
@@ -70,9 +74,6 @@ body {
 .menu-button:hover {
     color: var(--primary);
     transform: scale(120%);
-}
-.menu-button:active {
-    
 }
 
 .nav-menu {
@@ -112,7 +113,55 @@ body {
 
 
 /* hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.container-big {
+    display: flex;
+    position: relative;
+    padding: 80px 30px;
+    max-width: 1380px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+}
+
+.primary-text {
+    color: var(--primary);
+}
+
+.dl-box {
+    margin-top: 50px;
+}
+
+.dl-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.dl-button:hover {
+    background: white;
+    color: var(--primary);
+}
+
+.hero-screenshots {
+    
+}
 
 
 /* Screen size adjustments */
