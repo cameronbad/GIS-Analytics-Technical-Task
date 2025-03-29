@@ -18,6 +18,10 @@ body {
     background: var(--dark);
 }
 
+.tablet-only {
+    display: none;
+}
+
 /* headings and text */
 h1 {
     color: white;
@@ -139,19 +143,22 @@ h1 {
 
 .primary-text {
     color: var(--primary);
+    display: inline-block
 }
 
 .dl-box {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .dl-button {
+    display: block;
     padding: 0.75rem 1.5rem;
     background: var(--primary);
     color: white;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
+    font-size: 18px;
     transition: 0.3s;
 }
 .dl-button:hover {
@@ -160,9 +167,9 @@ h1 {
 }
 
 .hero-screenshots {
-    width: 600px;
-    min-width: 600px;
-    height: 5000px;
+    width: 700px;
+    min-width: 700px;
+    height: 3000px;
     justify-content: center;
     display: flex;
 }
@@ -227,7 +234,73 @@ h1 {
 
 
 /* Screen size adjustments */
-@media(max-width: 760px) {
+
+/* smaller than big laptop */
+@media(max-width: 1430px) {
+    .hero-screenshots {
+        width: 500px;
+        min-width: 500px;
+    }
+
+    .screenshots {
+        height: 400px;
+        width: 200px;
+    }
+
+    .app-screenshot {
+        height: 400px;
+    }
+
+    .app-screenshot.left {
+        bottom: -13px;
+        left: -80px;
+    }
+
+    .app-screenshot.right {
+        bottom: -13px;
+        right: -60px;
+    }
+}
+
+/* smaller than laptop */
+@media(max-width: 1020px) {
+    .hero > .container-big {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        justify-content: unset;
+        align-items: center;
+        text-align: center;
+        padding-top: 100px;
+        height: unset;
+        z-index: 4;
+    }
+
+    .dl-button {
+        font-size: 20px;
+    }
+
+    .hero-screenshots {
+        height: 200vh;
+    }
+
+    .sticky-container {
+        justify-content: end;
+    }
+}
+
+/* smaller than tablet */
+@media(max-width: 767px) {
+    .tablet-only {
+        display: unset;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
     .navbar {
         width: 100%;
         margin-top: 0;
@@ -254,5 +327,26 @@ h1 {
 
     .nav-links {
         flex-direction: column;
+    }
+
+    .container-big {
+        padding: 80px 14px;
+    }
+}
+
+@media(max-width: 550px) {
+    .hero-screenshots {
+        width: 300px;
+        min-width: 300px;
+    }
+
+    .app-screenshot.left {
+        bottom: -13px;
+        left: unset;
+    }
+
+    .app-screenshot.right {
+        bottom: -13px;
+        right: 0px;
     }
 }
