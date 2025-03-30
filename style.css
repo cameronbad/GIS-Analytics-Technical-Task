@@ -30,6 +30,19 @@ h1 {
     line-height: 1.1;
 }
 
+h2 {
+    color: var(--primary);
+    font-size: 40px;
+    margin: 3rem 1rem;
+}
+
+h3 {
+    color: var(--light-gray);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -235,11 +248,14 @@ h1 {
 
 /* animation for dashboard */
 @keyframes horizontalscroll {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
-        transform: translateX(-100%);
+    80% {
+        transform: translateX(calc(-100% + (100vw - 10px)));
+    }
+    100% {
+        transform: translateX(calc(-100% + (100vw - 10px)));
     }
 }
 
@@ -261,8 +277,10 @@ h1 {
 .horizontal-scroll-wrapper {
     display: flex;
     width: auto;
-    height: 500px;
+    height: 450px;
     overflow: visible;
+    grid-column-gap: 24px;
+    padding-left: 10px;
 
     animation: horizontalscroll 1s linear forwards;
     animation-play-state: paused;
@@ -346,6 +364,10 @@ h1 {
         font-size: 44px;
     }
 
+    h2 {
+        font-size: 30px;
+    }
+
     .navbar {
         width: 100%;
         margin-top: 0;
@@ -376,6 +398,16 @@ h1 {
 
     .container-big {
         padding: 80px 14px;
+    }
+
+    .horizontal-scroll-wrapper {
+        animation-delay: calc(var(--dashscroll) * -1.5s);
+        height: 350px;
+    }
+
+    .dashboard-card {
+        height: 300px;
+        width: 300px;
     }
 }
 

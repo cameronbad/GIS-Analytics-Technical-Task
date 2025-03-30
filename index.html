@@ -86,10 +86,22 @@
             </div>
         </section>
         <section id="features">
-
+            <div class="container-big">
+                <h2>Smart Features for Smart Betting</h2>
+                <div class="feature-card"></div>
+                <div class="feature-card"></div>
+                <div class="feature-card"></div>
+                <div class="feature-card"></div>
+            </div>
         </section>
         <section id="how-it-works">
-
+            <div class="container-big">
+                <h2>How it Works</h2>
+                <div class="feature-card"></div>
+                <div class="feature-card"></div>
+                <div class="feature-card"></div>
+                <div class="feature-card"></div>
+            </div>
         </section>
         <section id="support">
 
@@ -142,11 +154,7 @@
 
                 //Dashboard scrolling
                 const dashboard = document.getElementById("dashboard-preview");
-                if (screen.height / 2 > 420) {
-                    var dashstart = screen.height / 2;
-                } else {
-                    var dashstart = screen.height - 420;
-                }
+                var dashstart = screen.height - 550;
 
                 console.log("Scroll: " + window.scrollY + ", Dash: " + $("#dashboard-preview").offset().top + ", Start: " + dashstart);
 
