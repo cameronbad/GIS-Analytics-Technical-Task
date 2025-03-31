@@ -43,6 +43,10 @@ h3 {
     font-weight: 500;
 }
 
+p {
+    color: white;
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -130,7 +134,7 @@ h3 {
 
 
 /* hero */
-.hero {
+.center {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,6 +145,10 @@ h3 {
     position: relative;
     padding: 80px 30px;
     max-width: 1380px;
+}
+
+.container-big.col {
+    flex-direction: column;
 }
 
 .hero-content {
@@ -296,6 +304,42 @@ h3 {
     width: 400px;
 }
 
+/* features */
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature-card {
+    display: flex;
+    grid-row-gap: 16px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 24px;
+    max-width: 280px;
+    margin: 36px 10px;
+}
+
+.feature-card > h3 {
+    color: var(--primary);
+    margin: unset;
+}
+
+.feature-icon {
+    color: var(--primary);
+    height: 120px;
+    width: 120px;
+}
+
+.feature-icon > i {
+    font-size: 120px;
+}
+
 /* Screen size adjustments */
 
 /* smaller than big laptop */
@@ -327,7 +371,7 @@ h3 {
 
 /* smaller than laptop */
 @media(max-width: 1020px) {
-    .hero > .container-big {
+    .center > .container-big {
         flex-direction: column;
         align-items: center;
     }
@@ -425,5 +469,14 @@ h3 {
     .app-screenshot.right {
         bottom: -13px;
         right: 0px;
+    }
+
+    .feature-icon {
+        height: 80px;
+        width: 80px;
+    }
+    
+    .feature-icon > i {
+        font-size: 80px;
     }
 }
