@@ -209,9 +209,8 @@
             //Emergency reset for screensize changes
             $(document).ready(function() { 
                 $(window).resize(function() { 
-                    $(".nav-menu").css('height', '0px');
-                    $(".nav-menu").css('margin-top', '');
-                    $(".menu-button").css('rotate', '');
+                    $(".nav-menu").removeClass("open");
+                    $(".menu-button").removeClass("open");
                 }); 
             }); 
 
@@ -257,16 +256,22 @@
 
             //Navbar collapsible
             $(document).on("click", '.menu-button', function() {
-                if ($(".nav-menu").css('height') == '0px') {
-                    $(".nav-menu").css('height', '100vh');
-                    $(".nav-menu").css('margin-top', '3rem');
-                    $(this).css('rotate', '90deg');
+                if ($(".nav-menu").hasClass("open")) {
+                    $(".nav-menu").removeClass("open");
+                    $(this).removeClass("open");
                 } else {
-                    $(".nav-menu").css('height', '0px');
-                    $(".nav-menu").css('margin-top', '');
-                    $(this).css('rotate', '');
+                    $(".nav-menu").addClass("open");
+                    $(this).addClass("open");
                 }
             });
+
+            $(document).on("click", '.nav-menu', function() {
+                if (($(".nav-menu").hasClass("open"))) {
+                    $(".nav-menu").removeClass("open");
+                    $(".menu-button").removeClass("open");
+                }
+            });
+
 
             //Terms collapsible
             $(document).on("click", '.terms-collapse', function() {
