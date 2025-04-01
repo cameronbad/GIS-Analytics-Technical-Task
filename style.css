@@ -52,6 +52,13 @@ p {
     color: white;
 }
 
+.green {
+    color: #34C759;
+}
+.red {
+    color: #FF3B30;
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -323,6 +330,138 @@ p {
     transform: translateY(-10px);
 }
 
+.bal-text {
+    font-size: 4rem; 
+}
+
+.metric-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.long .metric-row {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.metric h4 {
+    margin-top: 0;
+    color: #888;
+}
+
+.metric span {
+    font-size: 1.5rem;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.activity-details {
+    flex: 1;
+    color: var(--light-gray);
+}
+
+.activity-return {
+    font-weight: bold;
+}
+
+.odds-chart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 320px;
+    padding-bottom: 2rem;
+    gap: 2rem;
+}
+
+.odds-bar-container {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.odds-bar {
+    width: 100%;
+    background: rgba(52, 199, 89, 0.3);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.odds-value {
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: -24px;
+    width: 100%;
+    text-align: center;
+}
+
+.odds-label {
+    color: #888;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: -24px;
+    width: 100%;
+    text-align: center;
+}
+
+.pl-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 290px;
+    gap: 1rem;
+}
+
+.pl-day {
+    flex: 1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.pl-day.green {
+    background: rgba(52, 199, 89, 0.2);
+}
+
+.pl-day.red {
+    background: rgba(255, 59, 48, 0.2);
+}
+
+.pl-value {
+    color: white;
+    font-weight: bold;
+}
+
+.pl-label {
+    color: var(--light-gray);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
 /* features */
 
 .feature-grid {
@@ -586,6 +725,27 @@ p {
     .dashboard-card {
         height: 300px;
         width: 300px;
+    }
+
+    .dashboard-card.long {
+        width: 600px;
+    }
+
+    .bal-text {
+        font-size: unset;
+    }
+
+    .odds-chart {
+        height: 220px;
+    }
+
+    .odds-label {
+        font-size: 0.7rem;
+    }
+
+    .pl-chart {
+        height: 190px;
+        gap: 0.4rem;
     }
 }
 
