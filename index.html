@@ -42,7 +42,7 @@
                 <div class="hero-content">
                     <h1>Transform Your <br class="tablet-only"> <span class="primary-text">Betting</span> Game</h1>
                     <div class="dl-box">
-                        <a href="" class="dl-button"><i class="fa-brands fa-apple" style="margin-right: 8px;"></i> Download on App Store</a>
+                        <a href="" class="button"><i class="fa-brands fa-apple" style="margin-right: 8px;"></i> Download on App Store</a>
                     </div>
                 </div>
                 <div id="hero-scroll" class="hero-screenshots">
@@ -140,7 +140,51 @@
             </div>
         </section>
         <section id="support">
-
+            <div class="container-big col center">
+                <!-- No functionality implemented -->
+                <h2>Support</h2>
+                <form class="support-form">
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="button">Send Message</button>
+                </form>
+                <div class="terms">
+                    <div class="terms-collapse">
+                        <div>Terms and Conditions</div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="terms-content">
+                        <div class="terms-wrapper">
+                            <h2>ZORT - Terms and Conditions</h2>
+                            <h3>Last Updated: 07 January 2025</h3>
+                            <p>Welcome to ZORT, an AI-powered bet-tracking application operated by GIS Analytics Limited ("we," "us," or "our"). By downloading, accessing, or otherwise using ZORT (the "App"), you agree to be bound by the following Terms and Conditions (the "Terms"). Please read them carefully.</p>
+                            <h4>1. Overview and Acceptance</h4>
+                            <h5>1.1 Purpose</h5>
+                            <p>ZORT is designed to assist users in logging, analyzing, and optimizing their sports betting activities. By accessing or using any part of ZORT, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+                            <h5>1.2 Modifications</h5>
+                            <p>We may modify or update these Terms at any time to reflect changes in our practices or applicable law. If any material changes are made, we will provide a clear notice within the App or via email. Your continued use of ZORT constitutes acceptance of any updated Terms.</p>
+                            <h4>2. Eligibility and User Accounts</h4>
+                            <p>You must be at least eighteen (18) years of age to use this application. By using ZORT, you represent and warrant that you satisfy this requirement.</p>
+                            <h4>3. Data Collection and Privacy</h4>
+                            <p>We collect only the personal information necessary to operate and improve the App. We do not sell or lease your personal data to third parties.</p>
+                            <h4>4. Contact Information</h4>
+                            <p>For questions regarding these Terms, the App, or to submit a complaint, please contact us at:</p>
+                            <p>GIS Analytics Limited<br>
+                                info@gisanalytics.uk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <div class="stats-ticker">
 
@@ -192,8 +236,6 @@
                 const dashboard = document.getElementById("dashboard-preview");
                 var dashstart = screen.height - 550;
 
-                console.log("Scroll: " + window.scrollY + ", Dash: " + $("#dashboard-preview").offset().top + ", Start: " + dashstart);
-
                 var dashscroll = ((window.scrollY - $("#dashboard-preview").offset().top + dashstart) / dashboard.scrollHeight);
                 if (dashscroll < 0) {
                     dashscroll = 0
@@ -204,7 +246,6 @@
 
             //Navbar collapsible
             $(document).on("click", '.menu-button', function() {
-                //Get page location
                 if ($(".nav-menu").css('height') == '0px') {
                     $(".nav-menu").css('height', '100vh');
                     $(".nav-menu").css('margin-top', '3rem');
@@ -214,9 +255,18 @@
                     $(".nav-menu").css('margin-top', '');
                     $(this).css('rotate', '');
                 }
-
             });
 
+            //Terms collapsible
+            $(document).on("click", '.terms-collapse', function() {
+                if ($(this).hasClass("open")) {
+                    $(this).removeClass("open");
+                    $(".terms-content").removeClass("open"); 
+                } else {
+                    $(this).addClass("open");
+                    $(".terms-content").addClass("open"); 
+                }
+            });
 
         </script>
     </div>

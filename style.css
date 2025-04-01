@@ -16,6 +16,7 @@
 
 body {
     background: var(--dark);
+    color: white;
 }
 
 .tablet-only {
@@ -41,6 +42,14 @@ h3 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 500;
+}
+
+h4 {
+    margin: 2rem 0 1rem 0;
+}
+
+h5 {
+
 }
 
 p {
@@ -171,7 +180,7 @@ p {
     margin-top: 20px;
 }
 
-.dl-button {
+.button {
     display: block;
     padding: 0.75rem 1.5rem;
     background: var(--primary);
@@ -182,7 +191,7 @@ p {
     font-size: 18px;
     transition: 0.3s;
 }
-.dl-button:hover {
+.button:hover {
     background: white;
     color: var(--primary);
 }
@@ -320,7 +329,6 @@ p {
     justify-content: flex-start;
     align-items: center;
 
-    gap: 24px;
     max-width: 280px;
     margin: 36px 10px;
 }
@@ -338,6 +346,99 @@ p {
 
 .feature-icon > i {
     font-size: 120px;
+}
+
+/* support */
+
+.support-form {
+    background: rgba(18, 18, 18, 0.8);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--light-gray);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(31, 31, 31, 0.8);
+}
+
+.support-form .button {
+    width: 100%;
+    font-size: unset;
+    margin-top: 1rem;
+}
+
+.terms {
+    background: rgba(18, 18, 18, 0.8);
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+.terms-collapse {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.terms-collapse i {
+    font-size: 26px;
+    transition: 1s ease-out;
+}
+
+.terms-collapse.open i {
+    color: var(--primary);
+    rotate: 180deg;
+}
+
+.terms-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    
+    transition: grid-template-rows 1s ease-out;
+}
+
+.terms-content.open {
+    grid-template-rows: 1fr;
+}
+
+.terms-wrapper {
+    min-height: 0;
+    padding: 0 30px;
+    transition: 1s ease-out;
+    visibility: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terms-content.open .terms-wrapper {
+    padding: 30px 30px;
+    visibility: visible;
+}
+
+.terms-wrapper * {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.terms-wrapper p {
+    margin-bottom: 1rem;
 }
 
 /* Screen size adjustments */
@@ -385,7 +486,7 @@ p {
         z-index: 4;
     }
 
-    .dl-button {
+    .button {
         font-size: 20px;
     }
 
