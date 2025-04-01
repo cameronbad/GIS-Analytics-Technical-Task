@@ -48,10 +48,6 @@ h4 {
     margin: 2rem 0 1rem 0;
 }
 
-h5 {
-
-}
-
 p {
     color: white;
 }
@@ -277,7 +273,7 @@ p {
 }
 
 #dashboard-preview {
-    background-image: linear-gradient(162deg, #11151b, #030303);
+    background-image: linear-gradient(162deg, var(--dark-gray), var(--dark));
     height: 200vw;
 }
 
@@ -348,6 +344,10 @@ p {
     font-size: 120px;
 }
 
+#how-it-works {
+    background-image: linear-gradient(162deg, var(--dark-gray), var(--dark));
+}
+
 /* support */
 
 .support-form {
@@ -386,7 +386,7 @@ p {
     background: rgba(18, 18, 18, 0.8);
     width: 100%;
     border-radius: 12px;
-    margin-top: 1.5rem;
+    margin-top: 4rem;
 }
 
 .terms-collapse {
@@ -439,6 +439,23 @@ p {
 
 .terms-wrapper p {
     margin-bottom: 1rem;
+}
+
+/* footer */
+
+.footer {
+    background-image: linear-gradient(162deg, var(--dark-gray), var(--dark));
+    display: flex;
+}
+
+.footer .container-big {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer .nav-links {
+    gap: 1rem;
+    align-items: center;
 }
 
 /* Screen size adjustments */
